@@ -2,7 +2,7 @@
 
 What does the sky in your city look like over the course of a year? Was there a month where all you could see was clouds (Portland)? Or is your year full of so much sun it's almost too much (Los Angeles)?
 
-Light areas indicate sunshine and clear sky, darker areas indicate increasing cloud cover.
+Light areas indicate sunshine and clear sky, darker areas indicate increasing cloud cover, black indicates night. The data is based on a satellite reanalysis from a database archived at NCDC.
 
 This visualization shows cloud cover over the course of 2011 for three sample cities (more to come!). The cloud cover data is based on a satellite reanalysis from a database archived at NCDC.
 
