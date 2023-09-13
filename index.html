@@ -7,17 +7,18 @@
 <script type="text/javascript" src="script.js"></script>
 
 <body>
-  <div id="container">
-    <h1 id="cityTitle"></h1>
-    <div id="inputContainer">
-      <label for="cities" id="citiesLabel">Select a city:</label>
-      <select id="cities" name="cities">
-        <option value="portland">Portland</option>
-        <option value="la">Los Angeles</option>
-        <option value="ny">New York</option>
-      </select>
+  <div id="grid">
+    <div class="container">
+      <h1 class="cityTitle">Portland</h1>
+      <svg id="pdxViz" width="480" height="250" viewbox="0 0 960 500"></svg>
     </div>
-    <p id="description">Light areas indicate sunshine and clear sky, gray areas indicate increasing cloud cover, black indicates night. The data is based on a satellite reanalysis from a database archived at NCDC. All times are Standard Time.</p>
-    <svg id="viz" width="960" height="500"></svg>
+    <div class="container">
+      <h1 class="cityTitle">Los Angeles</h1>
+      <svg id="laViz" width="480" height="250" viewbox="0 0 960 500"></svg>
+    </div>
+    <div class="container">
+      <h1 class="cityTitle">New York</h1>
+      <svg id="nyViz" width="480" height="250" viewbox="0 0 960 500"></svg>
+    </div>
   </div>
 </body>
