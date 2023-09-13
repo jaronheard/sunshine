@@ -1,0 +1,63 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+input {
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 0px;
+  background-color: black;
+  color: white;
+}
+
+select {
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 0px;
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  font-family: sans-serif;
+}
+
+.data {
+  fill: steelblue;
+}
+
+.timerect {
+  fill: steelblue;
+}
+
+.axis--y .tick line {
+  stroke: #fff;
+  stroke-opacity: 0.0;
+}
+
+.axis--x .tick line {
+  stroke: #fff;
+  stroke-opacity: 0.0;
+}
+
+.axis .domain {
+  display: none;
+}
+
+.sunriseareapath {
+  fill: black;
+  fill-opacity: 1.0;
+}
+
+.sunriseline {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+  fill: white;
+}
