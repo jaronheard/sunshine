@@ -19,9 +19,9 @@ window.onload = function onload() {
     "https://gist.githubusercontent.com/jaronheard/9f3b768b63a94b29ebfccce5b13c74fe/raw/63041e04b341c5c826ef6d4e924bcfb3fd89dc06/ny2011cloudcover.csv";
 
   const cityTitles = {};
-  cityTitles.portland = "🌤: PORTLAND";
-  cityTitles.la = "🌤: LOS ANGELES";
-  cityTitles.ny = "🌤: NEW YORK";
+  cityTitles.portland = "🌤️ Portland Sunshine & Cloud Cover";
+  cityTitles.la = "🌤️ Los Angeles Sunshine & Cloud Cover";
+  cityTitles.ny = "🌤️ New York Sunshine & Cloud Cover";
 
   const now = new Date(1970, 0, 1);
 
@@ -38,7 +38,7 @@ window.onload = function onload() {
     return new Date(1970, 0, 1, h, m);
   };
 
-  const svg = d3.select("svg");
+  const svg = d3.select("#viz");
   const margin = {
     top: 20,
     right: 0,
