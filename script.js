@@ -89,10 +89,10 @@ function processSunData(d) {
 }
 
 function processCloudData(d) {
-  const cloudChunks = 4;
+  const cloudChunks = 100;
   const cloudData = d;
   const c = parseInt(d.CloudCover, 10);
-  cloudData.cloud = Math.round(c / (200 / cloudChunks)) * (200 / cloudChunks);
+  cloudData.cloud = Math.round(c / (100 / cloudChunks)) * (100 / cloudChunks);
   cloudData.time = parseUTCTime(d.Date);
   cloudData.timeLocal = parseTime(d.Date);
   return cloudData;
@@ -110,8 +110,6 @@ window.onload = function onload() {
 
       const cover = g.selectAll(".cover").data(data);
 
-      cover.attr("fill", (d) => d3.interpolateGreys(d.cloud / 100));
-
       cover
         .enter()
         .append("rect")
@@ -123,9 +121,7 @@ window.onload = function onload() {
           return yToFit;
         })
         .attr("class", "cover")
-        .attr("fill", (d) =>
-          d3.interpolateGreys(Math.round(d.cloud / 1) / 100)
-        );
+        .attr("fill", (d) => d3.interpolateGreys(d.cloud / 100));
 
       cover.exit().remove();
 
@@ -181,30 +177,30 @@ window.onload = function onload() {
 
           g.selectAll("g").remove();
 
-          // g.append("g")
-          //   .attr("class", "axis axis--x")
-          //   .attr("transform", `translate(0,${height})`)
-          //   .call(
-          //     d3
-          //       .axisBottom(x)
-          //       .tickFormat(formatMonth)
-          //       .tickSize(-height)
-          //       .tickPadding(-10)
-          //   )
-          //   .selectAll("text")
-          //   .attr("text-anchor", "start")
-          //   .attr("x", 10)
-          //   .attr("dy", null);
+          g.append("g")
+            .attr("class", "axis axis--x")
+            .attr("transform", `translate(0,${height})`)
+            .call(
+              d3
+                .axisBottom(x)
+                .tickFormat(formatMonth)
+                .tickSize(-height)
+                .tickPadding(-10)
+            )
+            .selectAll("text")
+            .attr("text-anchor", "start")
+            .attr("x", 10)
+            .attr("dy", null);
 
-          // g.append("g")
-          //   .attr("class", "axis axis--y")
-          //   .call(
-          //     d3
-          //       .axisLeft(y)
-          //       .tickFormat(formatHour)
-          //       .tickSize(-width)
-          //       .tickPadding(10)
-          //   );
+          g.append("g")
+            .attr("class", "axis axis--y")
+            .call(
+              d3
+                .axisLeft(y)
+                .tickFormat(formatHour)
+                .tickSize(-width)
+                .tickPadding(10)
+            );
         }
       );
     });
